@@ -50,7 +50,7 @@ Generate the tables in the database (Base.metadata.create_all(engine)).
 """
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-engine = create_engine(f"sqlite:///{BASE_DIR}/drill_04.db", echo = True)
+engine = create_engine(f"sqlite:///{BASE_DIR}/drill_04.db", echo = False)
 print("Database created successfully")
 
 Base.metadata.create_all(engine)

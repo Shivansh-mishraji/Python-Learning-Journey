@@ -151,6 +151,7 @@ Step 1: OOP & Encapsulation ──► Step 2: Decorators & Streams ──► Ste
 - [`Stage-2/SQLAlchemy/drill_02_session_crud.py`](Stage-2/SQLAlchemy/drill_02_session_crud.py): **Session Lifecycle & Object Queries** — Unit of Work, `session.add_all()`, typed SELECT queries with `select(Model).scalars().all()`.
 - [`Stage-2/SQLAlchemy/drill_03_update_delete.py`](Stage-2/SQLAlchemy/drill_03_update_delete.py): **ORM UPDATE & DELETE** — In-memory dirty tracking, atomic attribute mutations, `session.delete()`, and transactional persistence.
 - [`Stage-2/SQLAlchemy/drill_04_relationships.py`](Stage-2/SQLAlchemy/drill_04_relationships.py): **One-to-Many Relationships & Unit of Work** — Bidirectional mapping (`ForeignKey`, `relationship()`, `back_populates`), cascade insert via Unit of Work, and verified bidirectional back-links.
+- [`Stage-2/SQLAlchemy/practice.py`](Stage-2/SQLAlchemy/practice.py): **Consolidated Blank-File Challenge: Kirana Store System** — Full 5-phase lifecycle synthesis from scratch (Declarative models, Unit of Work cascade insert, relational queries, dirty tracking update, and object deletion).
 - `Stage-2/SQLAlchemy/drill_05_fastapi_orm.py`: **FastAPI + SQLAlchemy DI Integration** — Generator dependency injection `get_db()`, Pydantic v2 serialization (`from_attributes=True`), and full REST CRUD. *(Next)*
 - `Stage-2/stage_2_grand_capstone.py`: **Stage 2 Grand Capstone: Production Store REST API** — Blank-slate synthesis of Custom Exceptions, Decorators, Pydantic v2, SQLAlchemy 2.0 ORM, and FastAPI endpoints. *(Milestone Gateway)*
 
@@ -209,6 +210,7 @@ Python-Learning-Journey/
 │       ├── drill_02_session_crud.py      # ✅ Session Lifecycle, add_all, SELECT
 │       ├── drill_03_update_delete.py     # ✅ Dirty tracking UPDATE & DELETE
 │       ├── drill_04_relationships.py     # ✅ 1-to-Many Relationships & Unit of Work Cascade
+│       ├── practice.py                   # ✅ Consolidated Blank-File Challenge (Kirana Store Full CRUD)
 │       └── drill_05_fastapi_orm.py       # ⏳ FastAPI + SQLAlchemy DI Integration (NEXT)
 └── README.md                   # Complete journey documentation
 ```
