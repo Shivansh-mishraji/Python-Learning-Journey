@@ -1,4 +1,4 @@
-r""". Custom Exceptions (Stage 1)
+""". Custom Exceptions (Stage 1)
 Define two domain-specific exceptions:
 
 class EntityNotFoundError(Exception): Raised when a database record is missing. Takes entity_name: str and entity_id: int and formats a clean error message.
@@ -10,6 +10,8 @@ import functools
 from sqlalchemy import create_engine, String, Float, ForeignKey
 from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column, relationship, Session
 import os
+from pydantic import BaseModel, ConfigDict
+from fastapi import FastAPI
 
 class EntityNotFoundError(Exception):
     def __init__(self, entity_name: str, entity_id: int):
@@ -76,4 +78,53 @@ class Order(Base):
 
 Base.metadata.create_all(engine)
 print("Tables had been created")
-    
+
+"""
+Phase 2: Pydantic v2 Schemas & Database Dependency Injection
+Now we build the bridge between HTTP requests, validation, and database sessions.
+
+Write the following into 
+
+stage_2_grand_capstone.py
+:
+
+Pydantic v2 Schemas (pydantic.BaseModel):
+
+OrderCreate: total: float
+OrderResponse: id: int, total: float, customer_id: int with model_config = ConfigDict(from_attributes=True)
+CustomerCreate: name: str, email: str
+CustomerResponse: id: int, name: str, email: str, orders: list[OrderResponse] = [] with model_config = ConfigDict(from_attributes=True)
+Session Dependency Injection (get_db):
+
+A generator function get_db() that yields a Session(engine) 
+"""
+class OrderCreate(BaseModel):
+    total: float
+
+class OrderResponse(BaseModel):
+    id: int
+    total: float
+    customer_id: int
+
+    model_config = ConfigDict(from_attributes=True)
+
+class CustomerCreate(BaseModel):
+    name: str
+    email: str
+
+class CustomerResponse(BaseModel):
+    id: int
+    name: str
+    email: str
+    orders: list[OrderResponse] = []
+
+    model_config = ConfigDict(from_attributes=True)
+
+def get_db():
+    with Session(engine) as session:
+        yield session
+
+
+
+
+
