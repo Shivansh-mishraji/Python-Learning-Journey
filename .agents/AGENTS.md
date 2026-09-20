@@ -24,6 +24,7 @@
 | Project Strategy | AI Resume & JD Analyzer will be built in a **separate repository**. Learning repo focuses on mastering foundation & backend architecture step-by-step. |
 | Applications sent | Zero — deliberately upskilling to hit high salary bar first |
 | DSA status | Active — 1 LeetCode Easy/day to clear initial technical screens |
+| Code Edit Policy | **STRICT**: Do NOT edit or overwrite Shivansh's code files directly unless he explicitly asks. Review thoroughly, highlight line numbers, explain bugs/trade-offs in chat, and let him write the code himself. |
 
 ---
 
