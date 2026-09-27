@@ -44,9 +44,9 @@ Rather than relying on passive tutorials, toy scripts, or surface-level copy-pas
 | Stage | Focus Area | Key Concepts & Industry Deliverables | Status |
 |:---|:---|:---|:---:|
 | **Stage 1** | **Python Core & Advanced Systems** | Encapsulation, `@property` validation, Custom Exceptions, Decorators (`@wraps`), Generators (`yield` pipelines), Typing | **✅ Mastered** |
-| **Stage 2** | **Relational SQL, SQLAlchemy 2.0 ORM & FastAPI** | Relational Modeling, Parameterized SQL, B-Tree Indexes, SQLAlchemy 2.0 DeclarativeBase, Session Unit of Work, Relationships, FastAPI DI | **🔥 Active** |
+| **Stage 2** | **Relational SQL, SQLAlchemy 2.0 ORM & FastAPI** | Relational Modeling, Parameterized SQL, B-Tree Indexes, SQLAlchemy 2.0 DeclarativeBase, Session Unit of Work, Relationships, FastAPI DI | **✅ Mastered** |
 | **Grand Capstone** | **Stage 2 Blank-Slate Production API** | **Full Store REST API**: FastAPI + SQLAlchemy 2.0 + Pydantic v2 + Custom Exceptions + Decorators + Multi-Table Relations | **✅ Done** |
-| **Stage 3** | **PostgreSQL, Alembic Migrations & Testing** | PostgreSQL engine, version-controlled migrations (Alembic), automated testing with `pytest`, fixtures, and DB rollback isolation | **⏳ Upcoming** |
+| **Stage 3** | **PostgreSQL, Alembic Migrations & Testing** | PostgreSQL engine, version-controlled migrations (Alembic), automated testing with `pytest`, fixtures, and DB rollback isolation | **🔥 Active** |
 | **Stage 4** | **Docker, Cloud DevOps & Production AI** | Multi-stage Docker, `docker-compose`, Gemini API, vector embeddings, pgvector/ChromaDB RAG pipeline, Cloud deployment | **⏳ Upcoming** |
 
 ---
@@ -153,7 +153,8 @@ Step 1: OOP & Encapsulation ──► Step 2: Decorators & Streams ──► Ste
 - [`Stage-2/SQLAlchemy/drill_04_relationships.py`](Stage-2/SQLAlchemy/drill_04_relationships.py): **One-to-Many Relationships & Unit of Work** — Bidirectional mapping (`ForeignKey`, `relationship()`, `back_populates`), cascade insert via Unit of Work, and verified bidirectional back-links.
 - [`Stage-2/SQLAlchemy/practice.py`](Stage-2/SQLAlchemy/practice.py): **Consolidated Blank-File Challenge: Kirana Store System** — Full 5-phase lifecycle synthesis from scratch (Declarative models, Unit of Work cascade insert, relational queries, dirty tracking update, and object deletion).
 - [`Stage-2/SQLAlchemy/drill_05_fastapi_orm.py`](Stage-2/SQLAlchemy/drill_05_fastapi_orm.py): **FastAPI + SQLAlchemy DI Integration** — Generator dependency injection `get_db()`, Pydantic v2 ORM serialization (`from_attributes=True`), and full REST CRUD endpoints.
-- `Stage-2/stage_2_grand_capstone.py`: **Stage 2 Grand Capstone: Production Store REST API** — Blank-slate synthesis of Custom Exceptions, Decorators, Pydantic v2, SQLAlchemy 2.0 ORM, and FastAPI endpoints. *(ACTIVE NEXT)*
+- [`Stage-2/SQLAlchemy/stage_2_grand_capstone.py`](Stage-2/SQLAlchemy/stage_2_grand_capstone.py): **Stage 2 Grand Capstone: Production Store REST API** — Blank-slate synthesis of Custom Exceptions, Decorators, Pydantic v2, SQLAlchemy 2.0 ORM, and FastAPI endpoints. Clean service/endpoint separation pattern.
+- [`Stage-2/SQLAlchemy/capstone_2.py`](Stage-2/SQLAlchemy/capstone_2.py): **Solo Blog REST API** — Second blank-file build, written independently. Authors + Posts with one-to-many relationships, `HTTPException` error handling, `@timer` decorator, full service/endpoint separation. Reviewed and revised through senior engineer feedback loop.
 
 ---
 
