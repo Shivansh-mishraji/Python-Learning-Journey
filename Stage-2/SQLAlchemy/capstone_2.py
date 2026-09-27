@@ -1,9 +1,6 @@
-# Blog REST API — FastAPI + SQLAlchemy 2.0 + Pydantic v2
-# Stack: FastAPI | SQLAlchemy 2.0 | Pydantic v2 | SQLite
+# Blog REST API
+# using FastAPI + SQLAlchemy 2.0 + Pydantic v2 + SQLite
 
-# =============================================================
-# IMPORTS
-# =============================================================
 import os
 import time
 import functools
@@ -14,15 +11,10 @@ from pydantic import BaseModel, ConfigDict
 from fastapi import FastAPI, Depends, HTTPException
 
 
-# =============================================================
-# APP
-# =============================================================
 app = FastAPI()
 
 
-# =============================================================
-# DATABASE SETUP
-# =============================================================
+# db setup
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 engine = create_engine(f"sqlite:///{BASE_DIR}/capstone.db", echo=False)
 
@@ -31,9 +23,7 @@ class Base(DeclarativeBase):
     pass
 
 
-# =============================================================
-# MODELS
-# =============================================================
+# models
 class Author(Base):
     __tablename__ = "author"
 
@@ -56,9 +46,7 @@ class Post(Base):
 Base.metadata.create_all(engine)
 
 
-# =============================================================
-# SCHEMAS
-# =============================================================
+# pydantic schemas
 class AuthorCreate(BaseModel):
     name: str
     email: str
@@ -88,17 +76,13 @@ class PostResponse(BaseModel):
     model_config = ConfigDict(from_attributes=True)
 
 
-# =============================================================
-# DEPENDENCIES
-# =============================================================
+# db dependency
 def get_db():
     with Session(engine) as session:
         yield session
 
 
-# =============================================================
-# UTILITIES
-# =============================================================
+# timer decorator
 def timer(func):
     @functools.wraps(func)
     def wrapper(*args, **kwargs):
@@ -110,9 +94,7 @@ def timer(func):
     return wrapper
 
 
-# =============================================================
-# SERVICE LAYER — Business logic, no FastAPI here
-# =============================================================
+# services
 @timer
 def create_author(db: Session, author: AuthorCreate) -> Author:
     new_author = Author(name=author.name, email=author.email)
@@ -147,9 +129,7 @@ def get_author_posts(db: Session, author_id: int) -> list[Post]:
     return author.posts
 
 
-# =============================================================
-# API ENDPOINTS — Just the door. Calls services, returns responses.
-# =============================================================
+# endpoints
 @app.post("/authors", status_code=201, response_model=AuthorResponse)
 def create_author_endpoint(author: AuthorCreate, db: Session = Depends(get_db)):
     return create_author(db, author)
