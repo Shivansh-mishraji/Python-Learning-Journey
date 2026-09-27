@@ -45,7 +45,7 @@ Rather than relying on passive tutorials, toy scripts, or surface-level copy-pas
 |:---|:---|:---|:---:|
 | **Stage 1** | **Python Core & Advanced Systems** | Encapsulation, `@property` validation, Custom Exceptions, Decorators (`@wraps`), Generators (`yield` pipelines), Typing | **✅ Mastered** |
 | **Stage 2** | **Relational SQL, SQLAlchemy 2.0 ORM & FastAPI** | Relational Modeling, Parameterized SQL, B-Tree Indexes, SQLAlchemy 2.0 DeclarativeBase, Session Unit of Work, Relationships, FastAPI DI | **🔥 Active** |
-| **Grand Capstone** | **Stage 2 Blank-Slate Production API** | **Full Store REST API**: FastAPI + SQLAlchemy 2.0 + Pydantic v2 + Custom Exceptions + Decorators + Multi-Table Relations | **⏳ Next** |
+| **Grand Capstone** | **Stage 2 Blank-Slate Production API** | **Full Store REST API**: FastAPI + SQLAlchemy 2.0 + Pydantic v2 + Custom Exceptions + Decorators + Multi-Table Relations | **✅ Done** |
 | **Stage 3** | **PostgreSQL, Alembic Migrations & Testing** | PostgreSQL engine, version-controlled migrations (Alembic), automated testing with `pytest`, fixtures, and DB rollback isolation | **⏳ Upcoming** |
 | **Stage 4** | **Docker, Cloud DevOps & Production AI** | Multi-stage Docker, `docker-compose`, Gemini API, vector embeddings, pgvector/ChromaDB RAG pipeline, Cloud deployment | **⏳ Upcoming** |
 
