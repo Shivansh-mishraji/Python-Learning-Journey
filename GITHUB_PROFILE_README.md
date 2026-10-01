@@ -76,12 +76,12 @@ class Shivansh:
   <tr>
     <td><b>API Framework</b></td>
     <td><img src="https://skillicons.dev/icons?i=fastapi&theme=dark" height="30"/> FastAPI</td>
-    <td>🔵 Intermediate</td>
+    <td>🔵 Intermediate+</td>
   </tr>
   <tr>
-    <td><b>Database</b></td>
-    <td><img src="https://skillicons.dev/icons?i=postgres&theme=dark" height="30"/> PostgreSQL + SQLAlchemy</td>
-    <td>⏳ Coming Soon</td>
+    <td><b>Database & ORM</b></td>
+    <td><img src="https://skillicons.dev/icons?i=sqlite,postgres&theme=dark" height="30"/> SQLite / PostgreSQL + SQLAlchemy 2.0</td>
+    <td>🔵 Intermediate</td>
   </tr>
   <tr>
     <td><b>DevOps</b></td>
@@ -110,11 +110,12 @@ class Shivansh:
 
 | Skill | Progress | Status |
 |:---|:---|:---:|
-| Python — OOP, Decorators, Exceptions | `██████████████░░░░░░` 70% | ✅ Core Done |
-| SQL — Queries, Joins, Aggregations | `████████░░░░░░░░░░░░` 40% | 🔵 Intermediate |
-| FastAPI — Routes, Pydantic | `██████░░░░░░░░░░░░░░` 30% | 🔵 Intermediate |
-| FastAPI — Auth, DI, Middleware | `░░░░░░░░░░░░░░░░░░░░` 0% | 🔄 Active |
-| PostgreSQL + SQLAlchemy + Alembic | `████░░░░░░░░░░░░░░░░` 15% | ⏳ Next |
+| Python — OOP, Decorators, Exceptions, Streams | `████████████████░░░░` 80% | ✅ Mastered |
+| SQL — Queries, Foreign Keys, Joins, Transactions, Indexes | `██████████████░░░░░░` 70% | ✅ Mastered |
+| FastAPI — Routes, Pydantic v2, Dependency Injection | `██████████████░░░░░░` 70% | ✅ Mastered |
+| SQLAlchemy 2.0 ORM — Models, Relationships, Unit of Work | `████████████░░░░░░░░` 60% | ✅ Mastered |
+| Multi-File REST API Architecture & Microservices | `██████████░░░░░░░░░░` 50% | 🔄 Active |
+| PostgreSQL + Alembic Migrations + Pytest | `████░░░░░░░░░░░░░░░░` 20% | ⏳ Next |
 | Docker + docker-compose + CI/CD | `░░░░░░░░░░░░░░░░░░░░` 0% | ⏳ Upcoming |
 | Gemini API + Embeddings + RAG | `░░░░░░░░░░░░░░░░░░░░` 0% | ⏳ Upcoming |
 
@@ -166,6 +167,17 @@ class Shivansh:
 | Test Suite | pytest + httpx | ⏳ Upcoming |
 | Containerize | Docker + docker-compose | ⏳ Upcoming |
 | Deploy | Railway + GitHub Actions CI | ⏳ Final |
+
+---
+
+## 💼 Built & Verified: Job Application Tracker REST API
+
+> **Modular Multi-File Backend** — FastAPI · SQLAlchemy 2.0 · Pydantic v2 · SQLite · `@timer` Latency Profiling
+
+- **6-Layer Decoupled Architecture**: Clean separation into `routers/`, `schemas.py`, `services.py`, `models.py`, `database.py`, and `main.py`.
+- **Relational Integrity**: 1-to-many bidirectional mapping (`User` ↔ `Application`) with foreign key constraints and dirty tracking persistence.
+- **Defensive API Standards**: Strict status state machines (`applied`, `interview`, `offer`, `rejected`), custom HTTP 404/400 exception handling, and full CRUD (`POST 201`, `GET 200`, `PATCH 200`, `DELETE 204`).
+- **Live Latency Observability**: Integrated `@timer` decorator logging sub-millisecond execution times for all database queries.
 
 ---
 
