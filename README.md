@@ -46,6 +46,7 @@ Rather than relying on passive tutorials, toy scripts, or surface-level copy-pas
 | **Stage 1** | **Python Core & Advanced Systems** | Encapsulation, `@property` validation, Custom Exceptions, Decorators (`@wraps`), Generators (`yield` pipelines), Typing | **✅ Mastered** |
 | **Stage 2** | **Relational SQL, SQLAlchemy 2.0 ORM & FastAPI** | Relational Modeling, Parameterized SQL, B-Tree Indexes, SQLAlchemy 2.0 DeclarativeBase, Session Unit of Work, Relationships, FastAPI DI | **✅ Mastered** |
 | **Grand Capstone** | **Stage 2 Blank-Slate Production API** | **Full Store REST API**: FastAPI + SQLAlchemy 2.0 + Pydantic v2 + Custom Exceptions + Decorators + Multi-Table Relations | **✅ Done** |
+| **Flagship Project** | **Job Application Tracker API** | **Modular Multi-File REST API**: Decoupled routers, schemas, services, models, @timer latency profiling, and full CRUD | **✅ Done** |
 | **Stage 3** | **PostgreSQL, Alembic Migrations & Testing** | PostgreSQL engine, version-controlled migrations (Alembic), automated testing with `pytest`, fixtures, and DB rollback isolation | **🔥 Active** |
 | **Stage 4** | **Docker, Cloud DevOps & Production AI** | Multi-stage Docker, `docker-compose`, Gemini API, vector embeddings, pgvector/ChromaDB RAG pipeline, Cloud deployment | **⏳ Upcoming** |
 
@@ -155,6 +156,14 @@ Step 1: OOP & Encapsulation ──► Step 2: Decorators & Streams ──► Ste
 - [`Stage-2/SQLAlchemy/drill_05_fastapi_orm.py`](Stage-2/SQLAlchemy/drill_05_fastapi_orm.py): **FastAPI + SQLAlchemy DI Integration** — Generator dependency injection `get_db()`, Pydantic v2 ORM serialization (`from_attributes=True`), and full REST CRUD endpoints.
 - [`Stage-2/SQLAlchemy/stage_2_grand_capstone.py`](Stage-2/SQLAlchemy/stage_2_grand_capstone.py): **Stage 2 Grand Capstone: Production Store REST API** — Blank-slate synthesis of Custom Exceptions, Decorators, Pydantic v2, SQLAlchemy 2.0 ORM, and FastAPI endpoints. Clean service/endpoint separation pattern.
 - [`Stage-2/SQLAlchemy/capstone_2.py`](Stage-2/SQLAlchemy/capstone_2.py): **Solo Blog REST API** — Second blank-file build, written independently. Authors + Posts with one-to-many relationships, `HTTPException` error handling, `@timer` decorator, full service/endpoint separation. Reviewed and revised through senior engineer feedback loop.
+- [`Stage-2/SQLAlchemy/job_tracker/`](Stage-2/SQLAlchemy/job_tracker/): **🚀 Flagship Project: Multi-File Modular Job Application Tracker REST API** — Enterprise-style decoupled architecture:
+  - `database.py`: SQLAlchemy 2.0 engine, `DeclarativeBase`, and `get_db()` dependency injection session generator
+  - `models.py`: Relational ORM mapping for `User` and `Application` with 1-to-many bidirectional relationship
+  - `schemas.py`: Pydantic v2 DTOs (`UserCreate`, `UserResponse`, `ApplicationCreate`, `ApplicationResponse`, `StatusUpdate`) with `from_attributes=True`
+  - `services.py`: Dedicated business logic layer with `@timer` execution profiling and defensive HTTP exception handling
+  - `routers/`: Modular `APIRouter` controllers for `/users` and `/applications` (POST 201, GET 200, PATCH 200, DELETE 204)
+  - `main.py`: Centralized FastAPI app factory and router registration
+  - Full end-to-end automated test suite verifying CRUD workflows and error paths
 
 ---
 
@@ -212,7 +221,19 @@ Python-Learning-Journey/
 │       ├── drill_03_update_delete.py     # ✅ Dirty tracking UPDATE & DELETE
 │       ├── drill_04_relationships.py     # ✅ 1-to-Many Relationships & Unit of Work Cascade
 │       ├── practice.py                   # ✅ Consolidated Blank-File Challenge (Kirana Store Full CRUD)
-│       └── drill_05_fastapi_orm.py       # ✅ FastAPI + SQLAlchemy DI Integration
+│       ├── drill_05_fastapi_orm.py       # ✅ FastAPI + SQLAlchemy DI Integration
+│       ├── stage_2_grand_capstone.py     # ✅ Stage 2 Grand Capstone: Store REST API
+│       ├── capstone_2.py                 # ✅ Solo Authors + Posts Blog REST API
+│       └── job_tracker/                  # 🚀 Flagship Project: Multi-File Job Tracker API
+│           ├── database.py               # Engine, Base, get_db session generator
+│           ├── models.py                 # User & Application relational models
+│           ├── schemas.py                # Pydantic v2 schemas (Create, Response, StatusUpdate)
+│           ├── services.py               # Business logic, @timer latency profiling, exceptions
+│           ├── routers/                  # Modular APIRouter controllers
+│           │   ├── users.py              # User endpoints (POST, GET)
+│           │   └── applications.py       # Application endpoints (POST, GET, PATCH, DELETE)
+│           ├── main.py                   # FastAPI app factory mounting routers
+│           └── README.md                 # Dedicated project documentation & roadmap
 └── README.md                   # Complete journey documentation
 ```
 
