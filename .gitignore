@@ -33,3 +33,6 @@ stage2_storage/
 *.sqlite
 __pycache__/
 *.pyc
+
+# Personal & Private Growth Log (Never commit)
+MY_GROWTH_JOURNEY.md
