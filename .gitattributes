@@ -1,0 +1,5 @@
+# GitHub Linguist Language Detection Configuration
+# Exclude Jupyter Notebooks and archived legacy files from language statistics
+*.ipynb linguist-detectable=false
+archive/** linguist-vendored=true
+assets/** linguist-vendored=true
