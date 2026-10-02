@@ -26,23 +26,27 @@ Rather than passive reading or watching videos, this journey was built on active
 * **Logged Problem-Solving Time:** ~57.5 hours of active architectural dialogue, debugging, and code construction
 * **Core Tech Stack:** Python 3.13, FastAPI, SQLAlchemy 2.0 ORM, Pydantic v2, SQLite, Uvicorn
 
+## Visual Insights & Practice Analytics
+
+![Shivansh Mishra Engineering Analytics](assets/journey_analytics.png)
+
+*Figure 1: Comprehensive telemetry of the 68-day learning trajectory — weekly active hours, domain focus distribution, cumulative practice milestones, and the transition from guided assistance to autonomous system design.*
+
 ---
 
 ## The 4 Milestones of Technical Evolution
 
-```
-[Milestone 1: Core Mechanics]      --> [Milestone 2: Relational Integrity]
-- OOP & Data Structures                - Relational Schema Design & Foreign Keys
-- Decorators & Metaprogramming         - Cascade Behaviors (ON DELETE CASCADE)
-- Protocol Testing (if __name__)       - HTTP Contracts & Server Safety
-
-                                    |
-                                    v
-
-[Milestone 3: Breaking Passive Habits] --> [Milestone 4: Modular Architecture]
-- The Anti-Tutorial Mindset            - Multi-Tier Layered Architecture
-- Blank-File Construction              - Decoupling Schemas (Create vs Response)
-- Under-the-Hood ORM Mechanics         - Autonomous Service-Layer Optimization
+```mermaid
+timeline
+    title 68-Day Engineering Evolution Milestones
+    section Stage 1 (Jul 26 - Aug 9)
+        Python OOP & Encapsulation : Protocol Testing (if __name__) : Decorators & Metaprogramming
+    section Stage 2 (Aug 11 - Aug 30)
+        Relational Schemas : Foreign Keys & Cascades : Server Safety (--reload)
+    section Stage 3 (Sep 5 - Sep 26)
+        SQLAlchemy ORM Internals : Unit of Work Pattern : The Anti-Passive Learning Shift
+    section Stage 4 (Sep 27 - Oct 1)
+        Multi-Tier Modular Architecture : Pydantic Contract Boundaries : Autonomous Logic Auditing
 ```
 
 ---
@@ -98,6 +102,38 @@ Rather than passive reading or watching videos, this journey was built on active
   * **Strict Data Boundaries:** Complete separation between database persistence models (`models.py`) and external API schemas (`schemas.py`), ensuring database internals are never leaked to clients.
   * **Payload Decoupling:** Enforcing distinct `CustomerCreate` / `JobCreate` request schemas versus response schemas (`CustomerResponse`) with `from_attributes = True`.
   * **Autonomous Logic Optimization:** During service layer implementation, identified and eliminated redundant database queries (such as unnecessary user lookups during application status updates), optimizing database roundtrips.
+
+```mermaid
+flowchart TD
+    subgraph ClientLayer ["1. Client Interaction"]
+        Client["HTTP Client / Browser / Postman"]
+    end
+
+    subgraph FastAPIBoundary ["2. API & Contract Boundary"]
+        Router["APIRouter (Endpoints, HTTP Status Codes)"]
+        Schemas["Pydantic v2 (Strict Request/Response Validation)"]
+    end
+
+    subgraph ServiceLayer ["3. Domain & Service Layer"]
+        Service["Services (Business Rules & Orchestration)"]
+    end
+
+    subgraph PersistenceLayer ["4. Persistence & ORM Layer"]
+        CRUD["CRUD Layer (Atomic Database Access)"]
+        Models["SQLAlchemy 2.0 ORM Models"]
+        DB[("Database Engine (SQLite / PostgreSQL)")]
+    end
+
+    Client -->|"HTTP Request + JSON Body"| Router
+    Router -->|"Validate Inbound Schema"| Schemas
+    Router -->|"Forward Validated Data"| Service
+    Service -->|"Invoke Atomic Query"| CRUD
+    CRUD -->|"Session Query / Mutate"| Models
+    Models <-->|"SQL Synchronization"| DB
+    CRUD -->|"Return Model Instance"| Service
+    Service -->|"Return Domain Result"| Router
+    Router -->|"Serialize Response Schema"| Client
+```
 
 ---
 
