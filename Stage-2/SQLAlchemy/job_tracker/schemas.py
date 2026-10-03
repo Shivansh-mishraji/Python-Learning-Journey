@@ -20,7 +20,7 @@ class UserResponse(BaseModel):
 class ApplicationCreate(BaseModel):
     company: str
     role: str
-    status: str
+    status: str 
     job_description: str
     user_id: int
 
