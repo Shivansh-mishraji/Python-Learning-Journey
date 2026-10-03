@@ -2,7 +2,7 @@
 # Applies to all AI interactions in this workspace.
 # ⚡ AUTO-UPDATING: This file is automatically updated by the AI mentor after every session
 #    based on observed patterns, new decisions, and Shivansh's innovative ideas.
-#    Last updated: 2026-09-06
+#    Last updated: 2026-10-03
 
 ---
 
@@ -78,9 +78,17 @@
   - [x] SQLAlchemy Drill 04: One-to-Many Relationships (`ForeignKey`, `relationship()`, `back_populates`, Unit of Work cascade)
   - [x] SQLAlchemy Consolidated Practice: `Stage-2/SQLAlchemy/practice.py` (Kirana Store System — DDL, Cascade Insert, Relationships, Dirty Tracking UPDATE, and DELETE from blank file)
   - [x] SQLAlchemy Drill 05: FastAPI + SQLAlchemy Integration (`Depends(get_db)`, Pydantic v2 schemas, REST CRUD)
-- [ ] **ACTIVE NEXT: Stage 2 Grand Capstone: Production Integrated API** (FastAPI + SQLAlchemy 2.0 ORM + Pydantic v2 + Custom Exceptions + Decorators + Relational Queries — built from a blank slate)
-- [ ] PostgreSQL + Alembic Migrations
-- [ ] pytest + mocking (Unit & Integration Testing)
+- [x] **Stage 2 Grand Capstones: Production Integrated APIs (All Mastered)**:
+  - [x] `stage_2_grand_capstone.py`: Production Store API (Custom exceptions, decorators, Pydantic v2, ORM, REST)
+  - [x] `capstone_2.py`: Solo Blog REST API (One-to-many author/post relations, latency profiling, error handling)
+  - [x] `job_tracker/`: Modular multi-file REST API (Decoupled routers, schemas, services, models, and full CRUD)
+- [x] **Stage 3A: Alembic Schema Migrations (Mastered ✅)**:
+  - [x] Migration environment setup (`alembic.ini`, `env.py`, `versions/`)
+  - [x] Schema evolution lifecycle: `revision --autogenerate`, `upgrade head`, `downgrade -1` rollbacks
+  - [x] Production gotcha diagnosis: SQLite lack of native `ALTER COLUMN` resolved via `render_as_batch=True` and `batch_alter_table`
+- [ ] **ACTIVE NEXT: Stage 3B — Automated API Testing with pytest & TestClient** (fixtures, dependency overrides, isolated test DB with rollback, endpoint assertions)
+- [ ] PostgreSQL Engine + Connection Pooling (asyncpg / pgbouncer)
+- [ ] Security & Authentication (JWT + Bcrypt Password Hashing)
 - [ ] Docker + docker-compose (Containerized Environment)
 - [ ] Deployment & Cloud Architecture (Render/Railway, Health Checks, Structured Logging)
 - [ ] GitHub Actions CI (Automated Linting & Test Matrix)
@@ -278,6 +286,7 @@ In 2026, AI easily generates basic syntax and toy CRUD apps. Top-paying startups
 | 2026-09-06 (evening) | **SQLAlchemy Drill 04 Mastered (One-to-Many Relationships & Unit of Work)** | Shivansh implemented bidirectional mapping (ForeignKey, relationship, back_populates), Unit of Work cascade insertion, and verified bidirectional back-links. Explored systems-level architecture: ephemeral cloud container disks vs managed PostgreSQL, concurrency row-locking vs table-locking, and why JSON files fail under multi-user production workloads. |
 | 2026-09-07 | **SQLAlchemy Consolidated Practice Mastered (`practice.py`)** | Shivansh independently initiated and completed a 5-phase blank-file challenge: modeled Kirana Store relational system (Customer/Order), executed Unit of Work cascade insertion, bidirectional relationship traversal, in-memory dirty tracking update, and object deletion with transactional persistence. Proven ready for FastAPI + SQLAlchemy ORM integration (Drill 05). |
 | 2026-09-13 | **SQLAlchemy Drill 05 Mastered (FastAPI + SQLAlchemy ORM Integration)** | Shivansh implemented production API integration: generator session dependency get_db() with deterministic yield/close lifecycle, Pydantic v2 from_attributes serialization, and full REST CRUD endpoints (POST /products, GET /products, GET /products/{id}). Verified via automated HTTP client. Stage 2 Foundations completely finished — ready for Stage 2 Grand Capstone. |
+| 2026-10-03 | **Alembic Migrations Mastered & Automated Testing (`pytest`) Selected** | Shivansh mastered Alembic schema migrations (`alembic.ini`, `env.py`, autogenerate, upgrade, downgrade rollbacks) and diagnosed SQLite's lack of native `ALTER COLUMN` by implementing batch mode (`render_as_batch=True`). Applied Rule 4 (ROI filter) to defer multi-branch merge conflicts and offline DBA scripts to on-the-job training. Selected automated API testing with `pytest` & `TestClient` as the immediate next high-ROI gateway to lock down reliability before adding security/auth. |
 
 ---
 
