@@ -13,7 +13,7 @@ from routers import applications, users
 from models import User, Application
 
 # app = FastAPI()
-app = FastAPI()
+app = FastAPI(title="Job Application Tracker API")
 # app.include_router(users.router)
 app.include_router(users.router)
 # app.include_router(applications.router)
